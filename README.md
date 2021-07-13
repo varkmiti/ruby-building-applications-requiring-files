@@ -157,8 +157,8 @@ _current file_ being run, there should be a `lib` folder with a file inside it,
 `ruby_file.rb`. When dealing with applications that have many neighboring files,
 we'll be using `require_relative`.
 
-> **Note**: The `.rb` file extension is option with `require_relative`, so using
-> `require_relative '../lib/ruby_file'` would also work.
+> **Note**: The `.rb` file extension is optional with `require_relative`, so
+> using `require_relative '../lib/ruby_file'` would also work.
 
 Since an application can be installed in many places on a computer, any internal
 file requirements should be _relative_ to each other rather, than specifying an
@@ -201,7 +201,7 @@ of `lib/garden.rb` and `lib/plant.rb`. At the top of `lib/garden.rb`, add the
 following line:
 
 ```ruby
-require_relative './plant.rb'
+require_relative './plant'
 ```
 
 Here, we're indicating to Ruby that there is a file, `plant.rb` located in the
@@ -212,6 +212,11 @@ instances.
 In this example, we only have two classes, but with `require_relative`, we can
 have as many classes as we want, each in a separate file. As long as they are
 all required in the file that we run, they'll get loaded.
+
+> **Top-Tip**: Since `require` and `require_relative` are both Ruby methods, you
+> can use them to load code from specific files in an IRB session as well! Try
+> running IRB and using `require_relative` to load in the code from the
+> `lib/garden` file and use some of the `Garden` methods.
 
 ### Local Variables
 
@@ -233,10 +238,10 @@ The exact workings of RSpec and the `spec_helper.rb` file are beyond the scope
 of this lesson, but the underlying premise is the same as what we did in this
 lesson.
 
-This is so common and so critical to Ruby applications that it became common to
-include a file dedicated to the task of requiring files and loading up any
-needed code when an application is run. In the next lesson, we'll take a closer
-look at this file, typically known as `environment.rb`.
+The process of requiring files is so common and so critical to Ruby applications
+that it is common to include a file dedicated to the task of requiring files and
+loading up any needed code when an application is run. In the next lesson, we'll
+take a closer look at this file, typically known as `environment.rb`.
 
 ## Resources
 
