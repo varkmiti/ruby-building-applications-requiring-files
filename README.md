@@ -146,7 +146,7 @@ The [`require_relative`][] method accepts a _relative file path_ to the file we
 want to require. This means we're providing a file path that starts from the
 file in which the `require_relative` statement is called.
 
-[require_relative]: https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-require_relative
+[`require_relative`]: https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-require_relative
 
 ```ruby
 require_relative '../lib/ruby_file.rb'
@@ -171,7 +171,7 @@ location relative to the _root_ directory. `require` will also accept shortened
 names, and checks if any matches are found in the directories located in your
 shell's [PATH variable][path variable].
 
-[require]: https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-require
+[`require`]: https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-require
 
 We don't often require files using their absolute path, but we will frequently
 require libraries using a shortened name. You have already seen this:
